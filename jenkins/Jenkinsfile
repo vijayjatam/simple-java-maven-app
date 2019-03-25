@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('MavenHome') {
             steps {
-                echo "${M2_HOME}"
+                echo "Hello World!!"
             }
         }
         stage('Build') {
