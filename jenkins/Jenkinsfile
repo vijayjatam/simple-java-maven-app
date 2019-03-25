@@ -8,7 +8,9 @@ pipeline {
         }
         stage('Build') {
             steps {
-                sh 'mvn -B -DskipTests clean package'
+                withMaven(maven : 'maven_3_6_0') {
+                    sh 'mvn -B -DskipTests clean package'
+                }
             }
         }
         stage('Test') {
@@ -23,7 +25,9 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                sh './jenkins/scripts/deliver.sh'
+                withMaven(maven : 'maven_3_6_0') {
+                    sh './jenkins/scripts/deliver.sh'
+                }
             }
         }
     }
