@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('MavenHome') {
             steps {
-                echo ${MAVEN_HOME}
+                echo "${MAVEN_HOME}"
             }
         }
         stage('Build') {
