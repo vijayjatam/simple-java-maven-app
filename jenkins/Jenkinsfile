@@ -26,9 +26,7 @@ pipeline {
         }
         stage('Deliver') {
             steps {
-                withMaven(maven : 'maven_3_6_0') {
-                    sh './jenkins/scripts/deliver.sh'
-                }
+                sh './jenkins/scripts/deliver.sh'
             }
         }
     }
