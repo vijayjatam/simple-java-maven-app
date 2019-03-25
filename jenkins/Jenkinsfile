@@ -11,9 +11,7 @@ pipeline {
         }
         stage('Build') {
             steps {
-                withMaven(maven : 'LocalMaven') {
-                    sh 'mvn -B -DskipTests clean package'
-                }
+                sh 'mvn -B -DskipTests clean package'   
             }
         }
         stage('Test') {
